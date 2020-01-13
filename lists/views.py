@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Item
 from .forms import ItemForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+@login_required
 def index(request):
     if request.method == 'POST':
         # Create a form instance from POST data.
